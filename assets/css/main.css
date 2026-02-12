@@ -1,0 +1,283 @@
+:root {
+    /* --- moda 色彩系統 --- */
+    --md-primary-1: #6868ac;
+    --md-primary-2: rgba(104,104,172,0.89);
+    --md-primary-3: #4e4e81;
+    --md-neutral-1: #1a1a1a;
+    --md-neutral-2: #3e4346;
+    --md-neutral-6: #ccc;
+    --md-neutral-7: #e5e5e5;
+    --md-neutral-9: #f3f5f6;
+    --md-white-1: #fff;
+    --md-black-1: #000;
+    
+    /* --- 分類色彩（保留原有） --- */
+    --color-learning: #2e7d32; 
+    --color-career: #0d47a1;   
+    --color-finance: #d84315;  
+    --color-life: #ad1457;     
+    --color-public: #6a1b9a;
+    
+    --shadow-card: 0 4px 6px rgba(0,0,0,0.08);
+    --shadow-hover: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-size: 1rem;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: var(--md-neutral-9);
+    color: var(--md-black-1);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--md-primary-1);
+    color: var(--md-black-1);
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* 全域圖片保險 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 頁首 */
+header {
+    text-align: center;
+    margin-bottom: 48px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 20px 0;
+}
+.icon-category {
+    width: 70px;
+    height: 70px;
+    object-fit: contain; 
+    background-color: white; 
+    border-radius: 50%;  
+    padding: 10px;
+    margin-right: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
+    flex-shrink: 0;
+}
+
+/* 2. 服務小圖樣式 */
+.icon-service {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-right: 12px;
+    border-radius: 6px;  
+}
+
+/* 頁首 */
+header {
+    text-align: center;
+    margin-bottom: 48px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin: 0 0 16px 0;
+    font-size: clamp(1.75rem, 4vw, 2rem);
+    color: var(--md-black-1);
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--md-neutral-2);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.main {
+    padding: 0 20px 40px;
+}
+
+.container {
+    max-width: 1318px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.category-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s ease;
+    border: 1px solid var(--md-neutral-6);
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+    padding: 24px 30px;
+    color: white; 
+    border-bottom: none; 
+    display: flex;
+    align-items: center; 
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: white !important;
+    letter-spacing: 0.5px;
+}
+
+.card-body {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    font-size: 1em;
+    color: var(--md-neutral-2);
+    margin-bottom: 24px;
+    font-weight: 300;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.service-list li {
+    display: contents;
+}
+
+/* 視覺隱藏但保留給輔助科技 */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 按鈕樣式 */
+.service-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--md-black-1);
+    background-color: #ffffff; 
+    border: 1px solid var(--md-neutral-6);
+    border-bottom: 3px solid var(--md-neutral-6);
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 400;
+    transition: all 0.1s ease;
+    min-height: 60px;
+}
+
+.service-btn:hover {
+    transform: translateY(2px); 
+    border-bottom-width: 1px;   
+    background-color: #f8f9fa;  
+    box-shadow: none;
+    text-decoration: none;
+    border-color: var(--md-neutral-6);
+}
+
+/* 鍵盤操作 */
+a:focus-visible {
+    outline: 3px solid var(--md-primary-1);
+    outline-offset: 2px;
+}
+
+/* 個別類別配色 */
+.learning .card-header { background-color: var(--color-learning); }
+.learning .service-btn:hover { border-color: var(--color-learning); color: var(--color-learning); }
+
+.career .card-header { background-color: var(--color-career); }
+.career .service-btn:hover { border-color: var(--color-career); color: var(--color-career); }
+
+.finance .card-header { background-color: var(--color-finance); }
+.finance .service-btn:hover { border-color: var(--color-finance); color: var(--color-finance); }
+
+.life .card-header { background-color: var(--color-life); }
+.life .service-btn:hover { border-color: var(--color-life); color: var(--color-life); }
+
+.public .card-header { background-color: var(--color-public); }
+.public .service-btn:hover { border-color: var(--color-public); color: var(--color-public); }
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--md-neutral-6);
+    color: var(--md-neutral-2);
+    font-size: 1em;
+    font-weight: 300;
+}
+
+@media (max-width: 37.5rem) {
+    header { padding: 20px 10px 0; }
+    .main { padding: 0 10px 20px; }
+    .container { grid-template-columns: 1fr; } 
+    .service-list { grid-template-columns: 1fr; }
+    .service-btn { 
+        padding: 12px 16px; 
+        min-height: 56px; 
+    } 
+    .icon-category { width: 60px; height: 60px; }
+}
+
+/* 動畫偏好設定 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .skip-link:focus {
+        transition: none;
+    }
+}
