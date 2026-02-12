@@ -1,3 +1,143 @@
+<style type="text/css">/* moda 設計系統 */
+:root {
+    --md-primary-1: #6868ac;
+    --md-neutral-2: #3e4346;
+    --md-neutral-6: #ccc;
+    --md-neutral-9: #f3f5f6;
+    --color-learning: #2e7d32;
+    --color-career: #0d47a1;
+    --color-finance: #d84315;
+    --color-life: #ad1457;
+    --color-public: #6a1b9a;
+}
+
+.container {
+    max-width: 1318px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    border: 1px solid var(--md-neutral-6);
+    transition: transform 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    padding: 24px 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.icon-category {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.description {
+    font-size: 1em;
+    color: var(--md-neutral-2);
+    margin-bottom: 24px;
+    font-weight: 300;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.service-list li {
+    display: contents;
+}
+
+.service-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #000;
+    background-color: #ffffff;
+    border: 1px solid var(--md-neutral-6);
+    border-bottom: 3px solid var(--md-neutral-6);
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 400;
+    transition: all 0.1s ease;
+    min-height: 60px;
+}
+
+.service-btn:hover {
+    transform: translateY(2px);
+    border-bottom-width: 1px;
+    background-color: #f8f9fa;
+    text-decoration: none;
+}
+
+.icon-service {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-right: 12px;
+    border-radius: 6px;
+}
+
+/* 分類配色 */
+.learning .card-header { background-color: var(--color-learning); }
+.learning .service-btn:hover { border-color: var(--color-learning); color: var(--color-learning); }
+
+.career .card-header { background-color: var(--color-career); }
+.career .service-btn:hover { border-color: var(--color-career); color: var(--color-career); }
+
+.finance .card-header { background-color: var(--color-finance); }
+.finance .service-btn:hover { border-color: var(--color-finance); color: var(--color-finance); }
+
+.life .card-header { background-color: var(--color-life); }
+.life .service-btn:hover { border-color: var(--color-life); color: var(--color-life); }
+
+.public .card-header { background-color: var(--color-public); }
+.public .service-btn:hover { border-color: var(--color-public); color: var(--color-public); }
+
+@media (max-width: 600px) {
+    .container { grid-template-columns: 1fr; }
+    .service-list { grid-template-columns: 1fr; }
+}
+</style>
+
 <h1>政府 AI 智慧服務地圖</h1>
 
 <p class="subtitle">20 個政府運用 AI 技術，在生活各面向提供更聰明、更便利的精選政府智慧服務</p>
